@@ -3,6 +3,8 @@ function toggleSidebar() {
     document.querySelector(".icon").classList.toggle("close");
   }
 
-  function darkMode() {
+function darkMode() {
     document.body.classList.toggle("dark-mode");
-  }
+}
+
+// window.onload = () => alert("Logged In Successfully!");

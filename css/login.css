@@ -1,0 +1,136 @@
+body {
+    background: #EEF2F7;
+}
+
+#brand-name {
+    font-family: 'Sofia';
+    font-size: 30px;
+    font-weight: bold;
+    color: burlywood;
+}
+
+#icon-image {
+    width: 100px;
+    height: 100px;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    
+}
+
+.left {
+    left: 0;
+    background-image: url("../images/adorable-animal-cat-close-up-320014.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.right {
+    right: 0;
+    background-image: url("../images/background-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+
+.box {
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    min-height: 300px;
+    width: 70%;
+    margin: 110px auto 30px auto;
+    background: rgb(238, 253, 255);
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 80px;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	z-index: 9;
+	background: #70c5c0;
+	padding: 15px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.avatar img {
+	width: 100%;
+}
+
+.box h2 {
+    margin: 20px auto;
+    font-family: 'Sofia';
+}
+
+.box input[type=text], 
+.box input[type=password], 
+.box input[type=email],
+.box input[type=tel],
+.modal input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: rgba(102, 29, 29, 0.086);
+}
+
+.box input:focus {
+    background-color: rgb(170, 139, 136);
+    color: whitesmoke;
+    opacity: 60%;
+}
+  
+.box button {
+    background-color: whitesmoke;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 2px solid lightsalmon;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 80%;
+    outline-width: 2px;
+}
+  
+.box button:hover {
+    background-color: rgb(243, 177, 187);
+    color: whitesmoke;
+}
+
+.close:hover {
+    transform: rotate(360deg);
+    transition: .5s;
+}
+  
+@media screen and (max-width: 600px) {
+    .left {
+        visibility: hidden;
+    }
+
+    .right {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .box p {
+        visibility: hidden;
+    }
+}

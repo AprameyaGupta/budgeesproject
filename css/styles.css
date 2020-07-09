@@ -35,8 +35,7 @@ nav i {
 
 .navbar-nav li.active {
     border: 2px solid turquoise;
-    border-start-start-radius: 30%;
-    border-end-end-radius: 30%;
+    border-radius: 10px;
     background-color: whitesmoke;
 }
 

@@ -4,232 +4,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Budgees-Landing Page</title>
+  <title>Budgees-Login Page</title>
 
   <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <link rel="icon" href="images/budgees-icon.png" type="image/icon type">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-
+  <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-expand-md nabar-expand-lg">
-    <div class="container">
+  <header class="navbar navbar-expand-sm navbar-dark fixed-top navbar-expand-md nabar-expand-lg">
+    <a id="brand-name" class="navbar-brand" href="#"><img id="icon-image" src="images/budgees-icon.png" alt="">
+      Budgees</a>
+    <div class="navbar-item ml-auto mb-5">
+      <h6 class="d-none d-md-block">Don't have an Account? <a href="signup.html">Register here!</a></h6>
+    </div>
+  </header>
 
-      <a id="brand-name" class="navbar-brand flex-grow-1" href="#">Budgees</a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar" aria-controls="Navbar"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="Navbar">
-        <div class="wrapper">
-          <div class="search_box">
-            <input type="text" placeholder="what are you looking for?">
-            <i id="fa-search" class="fa fa-search"></i>
-          </div>
+  <div class="split left"></div>
+  <div class="split right">
+    <div class="box">
+      <form>
+        <div class="avatar">
+          <img src="../images/avatar.png" alt="Avatar">
         </div>
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home">Home</i></a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-search">Explore</i></a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-bell">Notifications</i></a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-envelope-square">Messages</i></a></li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-cogs">Settings</i>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Preferences</a>
-                <a class="dropdown-item" href="#">About</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <label class="label">
-              <div class="toggle" onclick="darkMode()">
-                <input class="toggle-state" onchange="darkMode()" type="checkbox" name="check" value="check" />
-                <div class="indicator"></div>
-              </div>
+        <h2 class="text-center">Login</h4>
+          <div class="input-group">
+            <label for="uname">
+              <b>Username</b>
             </label>
-          </li>
-        </ul>
-      </div>
-      <div class="profile-header-container d-none d-sm-block">
-        <img class="img-circle" src="images/profile.webp" alt="Im" />
+            <input id="username" type="text" placeholder="Enter Username" name="uname" required>
+            <div id="userAlert" style="visibility: hidden;">
+              <b style="color: red;">* Please enter username.</b>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="psw">
+              <b>Password</b>
+            </label>
+            <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+            <div id="passAlert" style="visibility: hidden;">
+              <b style="color: red;">* Please enter password.</b>
+            </div>
+          </div>
+          <div>
+            <label class="mr-auto form-check-label"><input type="checkbox"> Remember me</label>
+          </div>
+          <div class="form-group">
+            <button type="submit" onclick=validate()>Login</a></button>
+          </div>
+          <div>
+            <a href="#" class="ml-auto" data-toggle="modal" data-target="#forgotModal">Forgot Password?</a>
+          </div>
+      </form>
+      <p class="text-center small">Don't have an account? <a href="signup.html">Register here!</a></p>
+    </div>
+  </div>
+
+  <div class="modal fade" id="forgotModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Forgot Password?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <label for="uname">
+              <b>Username:</b>
+            </label>
+            <input type="text" placeholder="Enter Username or Email" name="uname" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info">Send</button>
+        </div>
       </div>
     </div>
-  </nav>
+  </div>
 
-  <div class="container-fluid">
-    <div id="sidebar">
-      <div id="ham-wrapper" class="toggle-btn icon" onclick="toggleSidebar()">
-        <span class="toggle-btn-burger top"></span>
-        <span class="toggle-btn-burger middle"></span>
-        <span class="toggle-btn-burger bottom"></span>
-      </div>
-      <ul>
-        <li>
-          <div class="profile-header-container" style="width: 80px; height: 80px;">
-            <img class="img-circle" src="images/profile.webp" alt="Im" />
-          </div>
-        </li>
-        <li>
-          <h5>Aprameya Gupta</h5>
-        </li>
-        <li>
-          <div class="wrapper">
-            <div class="search_box">
-              <input type="text" placeholder="what are you looking for?">
-              <i id="fa-search" class="fa fa-search"></i>
-            </div>
-          </div>
+  <script type="text/javascript">
+    function validate() {
+      var username = document.getElementById("username");
+      var password = document.getElementById("password");
+      var userAlert = document.getElementById("userAlert");
+      var passAlert = document.getElementById("passAlert");
 
-        </li>
-        <li><a href="#"><i class="fa fa-home">Home</i></a></li>
-        <li><a href="#"><i class="fa fa-search">Explore</i></a></li>
-        <li><a href="#"><i class="fa fa-bell">Notifications</i></a></li>
-        <li><a href="#"><i class="fa fa-envelope-square">Messages</i></a></li>
-      </ul>
-    </div>
+      if (username.value == null || username.value == "") {
+        userAlert.style.visibility = "visible";
+        return false;
+      }
+      if (password.value == null || password.value == "") {
+        passAlert.style.visibility = "visible";
+        return false;
+      }
+      alert('Login successful');
+      location.href = "home.html";
+    } 
+  </script>
 
-    <header>
-      <div class="container">
-        <div class="container">
-          <div class="row row-header">
-          </div>
-        </div>
-
-      </div>
-    </header>
-    <div class="col-6 offset-lg-3 offset-sm-3 offset-md-3 col-sm-3">
-      <div class="card light border-info mb-3">
-        <img class="card-img-top" src="images/img.jpg" alt="Card image">
-        <div class="card-img-overlay">
-          <h4 class="card-title" style="color: aliceblue;">Aprameya</h4>
-        </div>
-        <div class="card-body">
-          <a class="card-text">#Aurora</a>
-          <div class="row">
-            <div class="col">
-              <i class="fa fa-thumbs-up"></i>
-            </div>
-            <div class="col">
-              <i class="fa fa-comment"></i>
-            </div>
-            <div class="col">
-              <i class="fa fa-share"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="card light border-info mb-3">
-        <img class="card-img-top" src="images/img.jpg" alt="Card image">
-        <div class="card-img-overlay">
-          <h4 class="card-title" style="color: aliceblue;">Aprameya</h4>
-        </div>
-        <div class="card-body">
-          <a class="card-text">#Aurora</a>
-          <div class="row">
-            <div class="col">
-              <i class="fa fa-thumbs-up"></i>
-            </div>
-            <div class="col">
-              <i class="fa fa-comment"></i>
-            </div>
-            <div class="col">
-              <i class="fa fa-share"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="card light border-info mb-3">
-        <img class="card-img-top" src="images/img.jpg" alt="Card image">
-        <div class="card-img-overlay">
-          <h4 class="card-title" style="color: aliceblue;">Aprameya</h4>
-        </div>
-        <div class="card-body">
-          <a class="card-text">#Aurora</a>
-          <div class="row">
-            <div class="col">
-              <i class="fa fa-thumbs-up"></i>
-            </div>
-            <div class="col">
-              <i class="fa fa-comment"></i>
-            </div>
-            <div class="col">
-              <i class="fa fa-share"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="card light border-info mb-3">
-        <img class="card-img-top" src="images/img.jpg" alt="Card image">
-        <div class="card-img-overlay">
-          <h4 class="card-title" style="color: aliceblue;">Aprameya</h4>
-        </div>
-        <div class="card-body">
-          <a class="card-text">#Aurora</a>
-          <div class="row">
-            <div class="col">
-              <i class="fa fa-thumbs-up"></i>
-            </div>
-            <div class="col">
-              <i class="fa fa-comment"></i>
-            </div>
-            <div class="col">
-              <i class="fa fa-share"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="card light border-info mb-3">
-        <img class="card-img-top" src="images/img.jpg" alt="Card image">
-        <div class="card-img-overlay">
-          <h4 class="card-title" style="color: aliceblue;">Aprameya</h4>
-        </div>
-        <div class="card-body">
-          <a class="card-text">#Aurora</a>
-          <div class="row">
-            <div class="col">
-              <i class="fa fa-thumbs-up"></i>
-            </div>
-            <div class="col">
-              <i class="fa fa-comment"></i>
-            </div>
-            <div class="col">
-              <i class="fa fa-share"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-    </div>
-
-    <footer class="footer">
-      <h5>Created by Aprameya Gupta</h5>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"></script>
-
-    <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
