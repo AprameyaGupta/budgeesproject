@@ -65,7 +65,8 @@
             <label for="phone">
               <b>Phone Number</b>
             </label>
-            <input id="phone" type="tel" placeholder="Enter Phone Number" name="phone" pattern="(?=.*\d).{10,}" required>
+            <input id="phone" type="tel" placeholder="Enter Phone Number" name="phone" pattern="(?=.*\d).{10,}"
+              required>
             <div id="phoneAlert" style="visibility: hidden;">
               Please enter phone number.
             </div>
@@ -149,6 +150,10 @@
     </div>
   </div>
 
+  <div id="dialog" title="Success">
+    <h3>Registered Successfully!</h3>
+  </div>
+
   <script>
     var fname = document.getElementById("fname");
     var lname = document.getElementById("lname");
@@ -165,6 +170,8 @@
     var genderAlert = document.getElementById("genderAlert");
     var passAlert = document.getElementById("passAlert");
     var repassAlert = document.getElementById("repassAlert");
+
+    var dialog = document.getElementById("dialog");
 
     function validate() {
       if (fname.value == null || fname.value == "") {
@@ -194,12 +201,10 @@
         repassword.style.visibility = "visible";
         return false;
       }
-      // return registeredModal.classList.modal("show");
-      return alert("Registered successfully");
+      // alert("Registered successfully");
+      dialog.dialog();
     }
-      // function proceedToLogin() {
-      //   return location.href = "index.html";
-      // }
+
   </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

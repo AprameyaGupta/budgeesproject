@@ -54,7 +54,7 @@
             <label class="mr-auto form-check-label"><input type="checkbox"> Remember me</label>
           </div>
           <div class="form-group">
-            <button type="submit" onclick=validate()>Login</a></button>
+            <button type="submit" onclick=formSubmit()>Login</a></button>
           </div>
           <div>
             <a href="#" class="ml-auto" data-toggle="modal" data-target="#forgotModal">Forgot Password?</a>
@@ -104,9 +104,15 @@
         passAlert.style.visibility = "visible";
         return false;
       }
-      alert('Login successful');
-      location.href = "home.html";
-    } 
+      return true;
+      // alert('Login successful');
+    }
+    function formSubmit() {
+      if(validate() == true) {
+        location.href = "home.html";
+        alert('Login successfully!');
+      }
+    }
   </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

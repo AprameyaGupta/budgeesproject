@@ -1,0 +1,47 @@
+.left button, .right button {
+    width: 100%;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.main {
+    text-align: center;
+}
+
+.center {
+    margin: auto;
+    margin-top: 10px;
+}
+
+.bio {
+    width: 100%; 
+    min-height: 200px;
+    border: 2px dashed rgb(18, 99, 153);
+    border-radius: 10px;
+}
+
+.emoji {
+    display: flex;
+    justify-content: center;
+}
+
+.emoji img {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+}
+
+.small-screen-buttons {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 574px) {
+    .small-screen-buttons {
+        visibility: visible;
+        display: block;
+    }
+
+    .small-screen-buttons button {
+        margin: 10px;
+    }
+}
