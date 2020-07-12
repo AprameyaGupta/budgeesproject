@@ -118,6 +118,23 @@ body {
     transform: rotate(360deg);
     transition: .5s;
 }
+
+#gender {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: rgba(102, 29, 29, 0.086);
+    content: "▼";
+}
+
+.alert-message {
+    color: red;
+}
+
   
 @media screen and (max-width: 600px) {
     .left {
